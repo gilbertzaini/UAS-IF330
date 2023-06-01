@@ -29,3 +29,27 @@ body {
     background-color: #4d5d53;
     border-radius: 12px 12px 0 0;
 }
+
+.jadwalFoto {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.dokterJadwal > :first-child {
+    border-style: solid;
+    border-width: medium;
+    border-color: #00bdb5;
+    border-radius: 12px;
+}
+
+.dokterJadwal a {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.jadwalDokter{
+    border-width: 0 0 0 3px;
+}
