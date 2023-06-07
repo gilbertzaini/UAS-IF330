@@ -28,9 +28,11 @@
                     </ul>
                 </div>
             </div>   
+            @auth
             <div>
                 <a class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
-            </div>          
+            </div>  
+            @endauth        
         </div>
     </li>
     @endfor

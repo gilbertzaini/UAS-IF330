@@ -68,7 +68,7 @@
 <div id="bpjs" class="" style="background-color: ;">
     <img src="{{asset('storage/assets/logoBPJS.png')}}" class="mx-auto py-5" style="width: 30em;"/>
     <h1 class="text-center pt-2">Melayani peserta BPJS Kesehatan tanpa IUR BIAYA</h1>
-    <div class="container col-4 mt-3 d-flex justify-content-center align-items-center" id="syaratBPJS">
+    <div class="container col-4 mt-3 d-flex justify-content-center align-items-center" id="syaratBPJS" style="width:50%;">
         <p style="color: white;">*Persyaratan: Fotocopy KTP, KK, Kartu BPJS + Surat Rujukan asli</p>
     </div>
 </div>
