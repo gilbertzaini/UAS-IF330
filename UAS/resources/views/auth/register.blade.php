@@ -44,7 +44,7 @@
         <!-- Nomor Telepon -->
         <div class="mt-4">
             <x-input-label for="noTelp" :value="__('Nomor Telepon')" />
-            <x-text-input id="noTelp" class="block mt-1 w-full" type="tel" name="noTelp" :value="old('noTelp')" required autocomplete="noTelp" />
+            <x-text-input id="noTelp" class="block mt-1 w-full" type="text" name="noTelp" :value="old('noTelp')" required autocomplete="noTelp" />
             <x-input-error :messages="$errors->get('noTelp')" class="mt-2" />
         </div>
 
