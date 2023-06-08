@@ -12,9 +12,9 @@
                     </div>
                     <div class="d-flex align-items-center" style="word-wrap: break-word;">
                         <div class="d-flex flex-column align-items-center justify-content-center col-8">
-                            <a href="#" class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">Hj. dr. Indah Desri Wahyuni, Sp.A, M.Kes</a>
+                            <p class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">Hj. dr. Indah Desri Wahyuni, Sp.A, M.Kes</p>
                         </div>
-                        <img class="ml-3" style="width: 4.5em; padding-left: 1em;" src="{{asset('storage/assets/eyeLogo.png')}}"/>
+                        <x-healthicons-f-eye class="ml-3" style="width: 4.5em; padding-left: 1em;"/>
                     </div>
                 </div>                
                 
