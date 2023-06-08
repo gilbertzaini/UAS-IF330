@@ -4,7 +4,7 @@
 <ul id="listJadwal">
     @foreach($doctors as $doctor)        
     <li class="dokterJadwal">
-        <div class="col-5 mx-auto my-2">
+        <div class="col-5 mx-auto my-2" style="min-height: 6.2rem;">
             <div class="d-flex d align-items-center justify-content-between">
                 <div class="d-flex justify-content-start mt-2">
                     <div class="d-flex flex-column justify-content-center align-items-center"/>
@@ -18,8 +18,8 @@
                     </div>
                 </div>                
                 
-                <div class="d-flex justify-content-start px-2 jadwalDokter my-2 col-4">
-                    <ul>
+                <div class="d-flex justify-content-start px-2 jadwalDokter my-auto py-auto col-4" style="height: auto;">
+                    <ul class="my-auto">
                         @foreach($doctor->jadwal as $jadwal)
                         <li>{{$jadwal->jadwalPraktik}}</li>
                         @endforeach
@@ -28,7 +28,7 @@
             </div>   
             @auth
             <div>
-                <a class="btn btn-primary" style="width:100%;">Buat Jadwal</a>
+                <a class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
             </div> 
             @endauth        
         </div>
