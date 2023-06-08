@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('alamat')->nullable();
             $table->string('jenisKelamin')->nullable();
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
