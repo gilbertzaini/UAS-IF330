@@ -39,9 +39,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/appointment', function () {
     return view('appointment');
-});
+})->middleware(['auth', 'verified'])->name('appointment');
 
-Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment');
+Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

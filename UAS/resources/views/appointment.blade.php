@@ -64,7 +64,7 @@
 <body>
     <h1>Make an Appointment</h1>
 
-    <form method="POST" action="{{ route('appointment') }}">
+    <form method="POST" action="{{ route('appointment.store') }}">
         @csrf
 
         <div>

@@ -28,7 +28,7 @@
             </div>   
             @auth
             <div>
-                <a class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
+                <a href={{ route('appointment') }} class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
             </div> 
             @endauth        
         </div>
