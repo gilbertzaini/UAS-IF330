@@ -18,7 +18,7 @@
                     </div>
                 </div>                
                 
-                <div class="d-flex justify-content-start px-2 jadwalDokter mt-2 col-4">
+                <div class="d-flex justify-content-start px-2 jadwalDokter my-2 col-4">
                     <ul>
                         <li>Senin 08.00-12.00</li>
                         <li>Selasa 08.00 - 12.00</li>
@@ -30,7 +30,7 @@
             </div>   
             @auth
             <div>
-                <a class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
+                <a class="btn btn-primary" style="width:100%;">Buat Jadwal</a>
             </div>  
             @endauth        
         </div>

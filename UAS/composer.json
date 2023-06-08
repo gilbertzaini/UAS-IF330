@@ -6,10 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "andreiio/blade-remix-icon": "^2.3",
+        "codeat3/blade-rpg-awesome-icons": "^1.4",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "troccoli/blade-health-icons": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

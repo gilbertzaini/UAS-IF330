@@ -24,42 +24,42 @@
   </div>
 
   <div id="specialties" class="text-center" style="background-color: #00bdb5;">
-    <h2 class="pt-4" style="font-weight: bold;">Our Specialties</h2>
-    <div id="specialtiesGrid" class="container mx-auto py-4 col-8">
+    <h1 class="pt-4" style="font-weight: bold;">Our Specialties</h1>
+    <div id="specialtiesGrid" class="container-fluid mx-auto py-4 col-10">
         <div class="row">
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>anak</p>
+                <x-healthicons-f-baby-0203m class="mx-auto"/>
+                <p>Anak</p>
             </div>
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>saraf</p>
+                <x-healthicons-f-eye class="mx-auto"/>
+                <p>Mata</p>
             </div>
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>mata</p>
+                <x-healthicons-o-surgical-sterilization class="mx-auto"/>
+                <p>Bedah</p>
             </div>
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>umum</p>
+                <x-healthicons-o-tooth class="mx-auto"/>
+                <p>Gigi</p>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>mata</p>
+                <x-healthicons-o-cardiology class="mx-auto"/>
+                <p>Penyakit Dalam</p>
             </div>
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>mata</p>
+                <x-healthicons-f-ear class="mx-auto"/>
+                <p>THT</p>
             </div>
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>mata</p>
+                <x-healthicons-o-obstetricsmonia  class="mx-auto"/>
+                <p>Kandungan</p>
             </div>
             <div class="col">
-                <img src="{{asset('storage/assets/eyeLogo.png')}}"/>
-                <p>mata</p>
+                <x-ri-psychotherapy-line class="mx-auto"/>
+                <p>Psikologis</p>
             </div>
         </div>
     </div>
