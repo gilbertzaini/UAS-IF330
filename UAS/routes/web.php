@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Doctor;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,7 +23,8 @@ Route::get('/', function () {
 });
 
 Route::get('/jadwal', function () {
-    return view('jadwal');
+    $doctors = Doctor::all();
+    return view('jadwal', ['doctors'=>$doctors]);
 });
 
 Route::get('/dashboard', function () {

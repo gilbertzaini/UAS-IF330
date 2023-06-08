@@ -2,7 +2,7 @@
 
 @section('content')
 <ul id="listJadwal">
-    @for ($i = 0; $i < 5; $i++)        
+    @foreach($doctors as $doctor)        
     <li class="dokterJadwal">
         <div class="col-5 mx-auto my-2">
             <div class="d-flex d align-items-center justify-content-between">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="d-flex align-items-center" style="word-wrap: break-word;">
                         <div class="d-flex flex-column align-items-center justify-content-center col-8">
-                            <p class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">Hj. dr. Indah Desri Wahyuni, Sp.A, M.Kes</p>
+                            <p class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">{{$doctor->nama}}</p>
                         </div>
                         <x-healthicons-f-eye class="ml-3" style="width: 4.5em; padding-left: 1em;"/>
                     </div>
@@ -20,19 +20,19 @@
                 
                 <div class="d-flex justify-content-start px-2 jadwalDokter my-2 col-4">
                     <ul>
-                        <li>Senin 08.00-12.00</li>
-                        <li>Selasa 08.00 - 12.00</li>
-                        <li>Rabu 08.00 - 10.00</li>                        
-                        <li>Kamis 08.00 - 09.00</li>                        
-                        <li>Jumat 08.00 - 15.00</li>
+                        @foreach($doctor->jadwal as $jadwal)
+                        <li>{{$jadwal->jadwalPraktik}}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>   
             @auth
-            
+            <div>
+                <a class="btn btn-primary" style="width:100%;">Buat Jadwal</a>
+            </div> 
             @endauth        
         </div>
     </li>
-    @endfor
+    @endforeach
 </ul>
 @stop
