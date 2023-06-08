@@ -29,9 +29,7 @@
                 </div>
             </div>   
             @auth
-            <div>
-                <a class="btn btn-primary" style="width:100%;">Buat Jadwal</a>
-            </div>  
+            
             @endauth        
         </div>
     </li>
