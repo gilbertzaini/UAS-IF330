@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -49,13 +49,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected $guard = 'web';
-
-    public function appointment(){
-        return $this->hasMany(Appointment::class);
-    }
-
-    public function review(){
-        return $this->hasMany(Review::class);
-    }
+    protected $guard = 'admin';
 }
