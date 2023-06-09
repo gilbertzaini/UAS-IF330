@@ -3,14 +3,14 @@
 @section('content')
     <div class="">
         <div class="review">
-            <div id="reviewedDoctor" class="py-3 d-flex justify-content-center align-center">
+            <div id="reviewedDoctor" class="py-3 d-flex justify-content-center align-center" style="background-color: white;">
                 <img src="{{asset('storage/assets/fotoDokter/bocil.jpg')}}">
                 <div class="d-flex flex-column justify-center align-center ml-5">
                     <h1 style="font-weight: bold; font-size: 3rem;">{{$doctor->nama}}</h1>
                     <p style="font-size: 1.5rem;">Spesialis: {{$doctor->spesialis}}</p>
                 </div>
             </div>
-            <div class="pb-5 pt-3" style="background-color: #b8e2f2;">
+            <div class="pb-5 pt-3">
                 <div class="mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 50%;">                 
                     <h1 style="font-weight: bold; font-size: 1.2rem;">Ulasan:</h1>
                     <hr class="mt-3"/>

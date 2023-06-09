@@ -65,7 +65,7 @@
     </div>
   </div>
 
-<div id="bpjs">
+<div id="bpjs" style="background-color: white;">
     <img src="{{asset('storage/assets/logoBPJS.png')}}" class="mx-auto py-5" style="width: 30em;"/>
     <h1 class="text-center pt-2">Melayani peserta BPJS Kesehatan tanpa IUR BIAYA</h1>
     <div class="container col-4 mt-3 d-flex justify-content-center align-items-center" id="syaratBPJS" style="width:50%;">
