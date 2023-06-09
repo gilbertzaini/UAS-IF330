@@ -4,13 +4,13 @@
 <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="5000">
-        <img src="https://kitasehat.co.id/wp-content/uploads/2023/03/building.jpg" class="d-block m-auto" alt="...">
+        <img src="https://images.pexels.com/photos/263201/pexels-photo-263201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block" alt="...">
       </div>
       <div class="carousel-item" data-bs-interval="5000">
-        <img src="https://www.forma-surabaya.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-01-at-21.42.08-1536x726.jpeg" class="d-block" alt="...">
+        <img src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block" alt="...">
       </div>
       <div class="carousel-item" data-bs-interval="5000">
-        <img src="https://www.esensia.co.id/wp-content/uploads/2021/04/klinik-esensia-depan-1536x1152.jpg" class="d-block" alt="...">
+        <img src="https://images.pexels.com/photos/6899554/pexels-photo-6899554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -24,7 +24,7 @@
   </div>
 
   <div id="specialties" class="text-center" style="background-color: #00bdb5;">
-    <h1 class="pt-4" style="font-weight: bold;">Our Specialties</h1>
+    <h1 class="pt-4" style="font-weight: bold; font-size: 2rem;">Our Specialties</h1>
     <div id="specialtiesGrid" class="container-fluid mx-auto py-4 col-10">
         <div class="row">
             <div class="col">

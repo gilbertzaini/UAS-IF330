@@ -21,7 +21,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 Route::get('/jadwal', function () {
     $doctors = Doctor::all();
@@ -29,25 +29,17 @@ Route::get('/jadwal', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-    Route::middleware(['auth'])->group(function () {
-        Route::prefix('admin')->name('admin.')->group(function () {
-            Route::get('/', [AdminController::class, 'index'])->name('index');
-            Route::get('/user', [AdminController::class, 'user'])->name('user');
-            Route::get('/approval', [AdminController::class, 'approval'])->name('approval');
-        });
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/', [AdminController::class, 'index'])->name('index');
+        Route::get('/user', [AdminController::class, 'user'])->name('user');
+        Route::get('/approval', [AdminController::class, 'approval'])->name('approval');
     });
-
-    // Add the route for the reviews page
-    Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
-
 });
 
 Route::middleware(['auth'])->group(function () {
