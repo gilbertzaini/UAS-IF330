@@ -25,14 +25,14 @@
 
             <!-- Auth Links -->
             @auth
-            <div class="hidden sm:flex sm:items-center sm:space-x-4 justify-center">
-                <x-nav-link :href="route('profile.edit')">
+            <div class="hidden sm:flex sm:items-center sm:space-x-4 justify-center" style="height: 100%;">
+                <x-nav-link :href="route('profile.edit')" style="height: 100%;">
                     {{ __('Profile') }}
                 </x-nav-link>
                 
-                <form method="POST" action="{{ route('logout') }}" class="ml-5">
+                <form method="POST" action="{{ route('logout') }}" class="ml-5" style="height: 100%;">
                     @csrf
-                    <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="pt-3" style="margin-top: 3px;">
+                    <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" style="height: 100%;">
                         {{ __('Log Out') }}
                     </x-nav-link>
                 </form>
@@ -41,11 +41,11 @@
 
             <!-- Guest Links -->
             @guest
-            <div class="hidden sm:flex sm:items-center sm:space-x-4">
-                <x-nav-link :href="url('/login')" :active="request()->url() === url('/login')">
+            <div class="hidden sm:flex sm:items-center sm:space-x-4" style="height: 100%;">
+                <x-nav-link :href="url('/login')" :active="request()->url() === url('/login')" style="height: 100%;">
                     Login
                 </x-nav-link>
-                <x-nav-link :href="url('/register')" :active="request()->url() === url('/register')" class="ml-5">
+                <x-nav-link :href="url('/register')" :active="request()->url() === url('/register')" class="ml-5" style="height: 100%;">
                     Register
                 </x-nav-link>
             </div>

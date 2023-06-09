@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<ul id="listJadwal">
+<ul id="listJadwal" class="py-3" style="height:90vh; overflow: auto;">
     @foreach($doctors as $doctor)        
     <li class="dokterJadwal">
-        <div class="col-5 mx-auto my-2" style="min-height: 6.2rem;">
+        <div class="col-5 mx-auto my-2" style="min-height: 6.2rem; background-color: white;">
             <div class="d-flex d align-items-center justify-content-between">
                 <div class="d-flex justify-content-start mt-2">
                     <div class="d-flex flex-column justify-content-center align-items-center"/>
