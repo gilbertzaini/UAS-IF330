@@ -49,7 +49,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/appointment/decline/{id}', [AppointmentController::class, 'decline'])->name('appointment.decline');
 });
 
-Route::middleware(['auth', 'web'])->group(function () {
+Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/appointment/create/{id}', [AppointmentController::class, 'create'])->name('appointment.create');    
     Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
