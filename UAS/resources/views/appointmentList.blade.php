@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container-fluid col-10 text-center">
-        <h1 class="my-5">Appointment List</h1>
+        <h1 class="pageHeading py-5">Appointment List</h1>
     
         <table class="table table-striped table-bordered">
-            <thead class="thead-light">
+            <thead class="table-dark">
                 <tr>
                     <th>Jadwal</th>
                     <th>Nama Dokter</th>
@@ -13,7 +13,7 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-light">
                 @foreach ($appointments as $appointment)
                 <tr>
                     <td>{{ $appointment->jadwal->jadwalPraktik }}</td>
