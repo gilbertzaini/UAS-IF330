@@ -13,4 +13,9 @@ class Jadwal extends Model
     {
         return $this->belongsTo(Doctor::class);
     }
+
+    public function appointment()
+    {
+        return $this->belongsTo(Appointment::class);
+    }
 }

@@ -9,6 +9,18 @@ class Appointment extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'id_dokter',
+        'id_user',
+        'id_jadwal',
+        'keluhan'
+    ];
+
     public function doctor()
     {
         return $this->belongsTo(Doctor::class);
@@ -17,5 +29,9 @@ class Appointment extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function jadwal(){
+        return $this->hasOne(Jadwal::class);
     }
 }

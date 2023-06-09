@@ -5,7 +5,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Doctor;
 use Illuminate\Support\Facades\Route;
-
+require __DIR__.'/auth.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -41,11 +41,11 @@ Route::get('/appointment', function () {
     return view('appointment');
 })->middleware(['auth', 'verified'])->name('appointment');
 
-Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/appointment/create/{id}', [AppointmentController::class, 'create'])->name('appointment.create');    
+    Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
-
-
-require __DIR__.'/auth.php';

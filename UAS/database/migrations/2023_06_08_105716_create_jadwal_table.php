@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('idDokter');
             $table->string('jadwalPraktik');
+            $table->boolean('booked');
             $table->timestamps();
         });
     }
