@@ -5,6 +5,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController; // Import the ReviewController
 use App\Models\Doctor;
+use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 require __DIR__.'/auth.php';
 
@@ -56,4 +57,11 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/doctors', [DoctorController::class, 'index']);
+    Route::get('/doctors/{doctor}/edit', [DoctorController::class, 'edit']);
+    Route::put('/doctors/{doctor}', [DoctorController::class, 'update']);
+    Route::delete('/doctors/{doctor}', [DoctorController::class, 'destroy']);
 });

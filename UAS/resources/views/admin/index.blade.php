@@ -18,3 +18,14 @@
         </div>
     </div>
 @endsection
+
+@foreach ($doctors as $doctor)
+    <p>{{ $doctor->name }} - {{ $doctor->spesialis }}</p>
+    <a href="/doctors/{{ $doctor->id }}/edit">Edit</a>
+    <form action="/doctors/{{ $doctor->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete</button>
+    </form>
+@endforeach
+
