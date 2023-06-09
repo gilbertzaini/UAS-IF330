@@ -12,10 +12,9 @@
                     </div>
                     <div class="d-flex align-items-center" style="word-wrap: break-word;">
                         <div class="d-flex flex-column align-items-center justify-content-center col-8">
-                            {{-- <a href={{ route('review') }} class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">{{$doctor->nama}}</a> --}}
-                            <a class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">{{$doctor->nama}}</a>
+                            <a href={{ route('review.show', ['id' => $doctor->id]) }} class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">{{$doctor->nama}}</a>
                         </div>
-                        <x-healthicons-f-eye class="ml-3" style="width: 4.5em; padding-left: 1em;"/>
+                        <x-healthicons-f-eye class="ml-3"/>
                     </div>
                 </div>                
                 

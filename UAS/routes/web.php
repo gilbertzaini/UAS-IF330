@@ -59,5 +59,9 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/review/{id}', [ReviewController::class, 'show'])->name('review.show');    
+});
+
+Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
