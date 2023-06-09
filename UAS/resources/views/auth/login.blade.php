@@ -33,7 +33,7 @@
         </div>
 
         <div class="flex items-center justify-between mt-5">
-            <a class="underline place-self-start text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+            <a style="height: auto;" class="my-auto underline place-self-start text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
                 {{ __('Register') }}
             </a>
             <div class="flex items-center justify-end">

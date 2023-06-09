@@ -30,9 +30,9 @@
                     {{ __('Profile') }}
                 </x-nav-link>
                 
-                <form method="POST" action="{{ route('logout') }}" class="ml-5" style="height: 100%;">
+                <form method="POST" action="{{ route('logout') }}" class="ml-5 my-auto" style="height: 100%;">
                     @csrf
-                    <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" style="height: 100%;">
+                    <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" style="height: 100%;" class="my-auto">
                         {{ __('Log Out') }}
                     </x-nav-link>
                 </form>
