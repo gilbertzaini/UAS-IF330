@@ -23,8 +23,9 @@ class Appointment extends Model
 
     public function doctor()
     {
-        return $this->belongsTo(Doctor::class);
+        return $this->belongsTo(Doctor::class, 'id_dokter');
     }
+   
 
     public function user()
     {
@@ -32,6 +33,6 @@ class Appointment extends Model
     }
 
     public function jadwal(){
-        return $this->hasOne(Jadwal::class);
+        return $this->belongsTo(Jadwal::class, 'id_jadwal');
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController; // Import the ReviewController
+use App\Models\Doctor;
 use Illuminate\Support\Facades\Route;
 require __DIR__.'/auth.php';
 
@@ -23,7 +24,8 @@ Route::get('/', function () {
 });
 
 Route::get('/jadwal', function () {
-    return view('jadwal');
+    $doctors = Doctor::all();
+    return view('jadwal', ['doctors'=>$doctors]);
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -35,10 +37,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/appointment', function () {
-        return view('appointment');
-    });
-    
     Route::middleware(['auth'])->group(function () {
         Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/', [AdminController::class, 'index'])->name('index');
@@ -55,6 +53,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/appointment/create/{id}', [AppointmentController::class, 'create'])->name('appointment.create');    
     Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
+    Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
+    Route::get('/appointment/approve/{id}', [AppointmentController::class, 'list'])->name('appointment.approve');
+    Route::get('/appointment/decline/{id}', [AppointmentController::class, 'list'])->name('appointment.decline');
 });
 
 Route::middleware(['auth'])->group(function () {

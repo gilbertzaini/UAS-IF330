@@ -16,6 +16,6 @@ class Jadwal extends Model
 
     public function appointment()
     {
-        return $this->belongsTo(Appointment::class);
+        return $this->hasMany(Appointment::class);
     }
 }

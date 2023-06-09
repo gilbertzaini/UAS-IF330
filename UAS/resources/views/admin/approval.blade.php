@@ -29,3 +29,9 @@
     </table>
 </div>
 @endsection
+
+
+{{-- <td>
+    <a href="{{ route('appointment.approve', ['id' => $appointment->id]) }}" class="btn btn-success">Accept</a>
+    <a href="{{ route('appointment.approve', ['id' => $appointment->id]) }}" class="btn btn-danger">Decline</a>          
+</td> --}}

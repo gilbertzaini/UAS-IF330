@@ -15,6 +15,11 @@
                     <x-nav-link :href="url('/jadwal')" :active="request()->url() === url('/jadwal')">
                         Jadwal
                     </x-nav-link>
+                    @auth
+                    <x-nav-link :href="route('appointment.list')" :active="request()->route() === route('appointment.list')">
+                        Daftar Reservasi
+                    </x-nav-link>
+                    @endauth
                 </div>
             </div>
 

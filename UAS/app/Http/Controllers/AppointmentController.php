@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Doctor;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -33,7 +34,17 @@ class AppointmentController extends Controller
 
         $appointment->save();
 
-        return redirect('/jadwal');
+        return redirect()->route('appointment.list');
+    }
+
+    public function list(){
+        $userid = Auth::user()->id;
+
+        $appointments = Appointment::where('id_user', $userid)->get();
+
+        // dd($appointments);
+
+        return view('appointmentList', ['appointments' => $appointments]);
     }
 
     public function approve(string $id){
