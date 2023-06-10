@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid col-10 text-center">
+<div class="container-fluid col-10 text-center pb-5">
     <h1 class="pageHeading py-5">Daftar Dokter</h1>
 
-    <table class="table table-striped table-bordered">
+    <table id="doctorListTable" class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
                 <th>Foto</th>
@@ -17,16 +17,18 @@
             @foreach ($doctors as $doctor)
             <tr>
                 <td></td>
-                <td>{{$doctor->nama}}</td>
+                <td>
+                    <a href={{ route('doctor.edit', ['id' => $doctor->id]) }} class="namaDokter text-start" style="word-wrap: break-word;">{{$doctor->nama}}</a>
+                </td>
                 <td>{{$doctor->spesialis}}</td>
                 <td>         
-                    <form method="post" action="{{ route('doctor.destroy', ['id'=>$doctor->id]) }}" class="p-6">
+                    <form method="post" action="{{ route('doctor.destroy', ['id'=>$doctor->id]) }}" class="py-auto">
                         @csrf
                         @method('delete')
-                        <div>
-                            <x-danger-button>
+                        <div class="d-flex align-center justify-center">
+                            <button class="btn btn-danger">
                                 {{ __('Delete') }}
-                            </x-danger-button>
+                            </button>
                         </div>
                     </form>
                 </td>

@@ -93,16 +93,6 @@ tr {
     text-align: center;
 }
 
-tbody {
-    overflow: auto;
-    max-height: 50%;
-}
-
-ul {
-    max-height: 30%;
-    overflow: auto;
-}
-
 li {
     text-align: start;
 }

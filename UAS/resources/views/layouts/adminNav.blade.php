@@ -12,7 +12,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="url('/jadwal')" :active="request()->url() === url('/jadwal')">
+                    <x-nav-link :href="route('admin.jadwal')" :active="request()->url() === url('/jadwal')">
                         Jadwal
                     </x-nav-link>
                     <x-nav-link :href="route('admin.user')" :active="request()->route() === route('admin.user')">
