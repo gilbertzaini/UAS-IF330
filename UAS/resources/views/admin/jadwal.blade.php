@@ -1,42 +1,31 @@
 @extends('layouts.admin')
 
 @section('content')
-<div>    
-    <h1 class="pageHeading py-5">Jadwal Praktik Dokter</h1>
-
-    <ul id="listJadwal" style="height:90vh; overflow: auto;">
-        @foreach($doctors as $doctor)        
-        <li class="dokterJadwal">
-            <div class="col-5 mx-auto my-2" style="min-height: 6.2rem; background-color: white;">
-                <div class="d-flex d align-items-center justify-content-between">
-                    <div class="d-flex justify-content-start mt-2">
-                        <div class="d-flex flex-column justify-content-center align-items-center"/>
-                            <img class="jadwalFoto mx-4" src="{{asset('storage/assets/fotoDokter/bocil.jpg')}}"/>
-                        </div>
-                        <div class="d-flex align-items-center" style="word-wrap: break-word;">
-                            <div class="d-flex flex-column align-items-center justify-content-center col-8">
-                                <a href={{ route('review.show', ['id' => $doctor->id]) }} class="namaDokter text-start" style="word-wrap: break-word; font-weight:bold;">{{$doctor->nama}}</a>
-                            </div>
-                            <x-healthicons-f-eye class="ml-3"/>
-                        </div>
-                    </div>                
-                    
-                    <div class="d-flex justify-content-start px-2 jadwalDokter my-auto py-auto col-4" style="height: auto;">
-                        <ul class="my-auto">
-                            @foreach($doctor->jadwal as $jadwal)
-                            <li>{{$jadwal->jadwalPraktik}}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>   
-                @auth
-                <div>                
-                    <a href='appointment/create/{{$doctor->id}}' class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
-                </div> 
-                @endauth        
-            </div>
-        </li>
-        @endforeach
-    </ul>
-</div>
+<h1 class="pageHeading py-5">Jadwal Praktik Dokter</h1>
+    
+<form action="{{route('admin.doctor.search')}}" method="POST">        
+    @csrf
+    <div class="px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 50%;">                 
+        <x-input-label for="param" :value="__('Spesialis: ')" style="height: 2rem; font-size: 1rem;"/>
+        <div class="d-flex justify-between align-center">
+            <div style="width: 83%;">
+                <select name="param" id="param" class="px-2 block w-full text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" style="height: 2.5rem;">
+                    <option value="all">Spesialis</option>
+                    <option value="Dokter Mata">Mata</option>
+                    <option value="Dokter Gigi">Gigi</option>
+                    <option value="Dokter Bedah">Bedah</option>
+                    <option value="Dokter Anak">Anak</option>
+                    <option value="Dokter Penyakit Dalam">Penyakit Dalam</option>
+                    <option value="Dokter THT">THT</option>
+                    <option value="Dokter Kandungan">Kandungan</option>
+                    <option value="Psikolog">Psikologis</option>
+                </select>
+            </div>            
+            <x-primary-button style="height: 2.5rem; background-color:grey;">
+                {{ __('Search') }}
+            </x-primary-button>
+        </div>
+    </div>
+</form>
+@include('common.tabelJadwal')
 @stop

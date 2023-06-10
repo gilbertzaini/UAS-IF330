@@ -57,12 +57,8 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-.dokterJadwal svg{
-    width: 10rem;
-    height: auto;
-    margin: auto;
-    padding: 10px;
-    /* object-fit: cover; */
+.teksSpesialis {
+    border-width: 3px 0 0 0;
 }
 
 .jadwalDokter{
@@ -72,8 +68,8 @@ body {
 #reviewedDoctor img{
     width: 10em;
     height: 10em;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 12%;
+    object-fit: contain;
 }
 
 .pageHeading {
@@ -97,7 +93,6 @@ tr {
     text-align: center;
 }
 
-tbody {
-    overflow: auto;
-    max-height: 50%;
+li {
+    text-align: start;
 }

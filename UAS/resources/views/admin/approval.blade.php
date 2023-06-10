@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid col-10 text-center">
+<div class="container-fluid col-10 text-center pb-5">
     <h1 class="pageHeading py-5">Appointment List</h1>
 
     <table class="table table-striped table-bordered">
@@ -22,8 +22,8 @@
                 <td>{{$appointment->user->name}}</td>
                 <td>{{$appointment->status}}</td>
                 <td>
-                    <button href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Accept</button>
-                    <button href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Decline</button>     
+                    <button class="btn btn-success" href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Accept</button>
+                    <button class="btn btn-danger" href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Decline</button>     
                 </td>
             </tr>
             @endforeach
