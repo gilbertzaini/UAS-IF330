@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController; // Import the ReviewController
 use App\Models\Doctor;
@@ -47,6 +48,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/admin/doctor', [AdminController::class, 'doctor'])->name('admin.doctor');
         Route::delete('/admin/doctor/{id}/delete', [AdminController::class, 'destroyDoctor'])->name('doctor.destroy');
 
+        Route::post('admin/jadwal/filter', [JadwalController::class, 'adminSearch'])->name('admin.doctor.search');
+
         Route::get('/appointment/approve/{id}', [AppointmentController::class, 'approve'])->name('appointment.approve');
         Route::get('/appointment/decline/{id}', [AppointmentController::class, 'decline'])->name('appointment.decline');
 });
@@ -58,4 +61,4 @@ Route::middleware(['auth', 'user'])->group(function () {
 });
 
 Route::get('/review/{id}', [ReviewController::class, 'show'])->name('review.show');
-    
+Route::post('/jadwal/filter', [JadwalController::class, 'search'])->name('doctor.search');

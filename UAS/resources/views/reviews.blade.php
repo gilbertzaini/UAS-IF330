@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="pb-5 pt-3">
-                <div class="mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 50%;">                 
+                <div class="mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 50%;">                 
                     <h1 style="font-weight: bold; font-size: 1.2rem;">Ulasan:</h1>
                     <hr class="mt-3"/>
                     <div class="py-3 mt-2" style="overflow: auto; height: 52%;">
