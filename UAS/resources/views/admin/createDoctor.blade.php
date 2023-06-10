@@ -5,19 +5,18 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
             <div class="max-w-xl">
-                <form method="post" action="{{ route('doctor.update', ['id'=>$doctor->id]) }}" class="mt-6 space-y-6" enctype="multipart/form-data">
+                <form method="post" action="{{ route('doctor.store') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
                     @csrf
-                    @method('patch')
 
                     <div>
                         <x-input-label for="nama" :value="__('Nama')" />
-                        <x-text-input id="name" name="nama" type="text" class="mt-1 block w-full" :value="old('nama', $doctor->nama)" required autofocus autocomplete="name" />
+                        <x-text-input id="name" name="nama" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
                         <x-input-error class="mt-2" :messages="$errors->get('nama')" />
                     </div>
 
                     <div>
                         <x-input-label for="spesialis" :value="__('Spesialis')" />
-                        <x-text-input id="tempatLahir" name="spesialis" type="text" class="mt-1 block w-full" :value="old('spesialis', $doctor->spesialis)" required autocomplete="spesialis" />
+                        <x-text-input id="tempatLahir" name="spesialis" type="text" class="mt-1 block w-full" required autocomplete="spesialis" />
                         <x-input-error class="mt-2" :messages="$errors->get('spesialis')" />
                     </div>
                     

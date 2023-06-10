@@ -6,7 +6,7 @@
                 <div class="d-flex d align-items-center justify-content-between py-2">
                     <div class="container d-flex justify-content-start my-auto">
                         <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                            <img class="jadwalFoto mx-auto" src="{{asset('storage/assets/fotoDokter/bocil.jpg')}}" />
+                            <img class="jadwalFoto" src="data:image/jpeg;base64,{{ base64_encode($doctor->foto) }}"/>
                         </div>
                         <div class="container d-flex flex-column text-start" style="word-wrap: break-word;">
                             <div class="my-auto py-auto">
@@ -27,9 +27,11 @@
                     </div>
                 </div>   
                 @auth
+                @if(auth()->user()->is_admin == 0)
                 <div>                
                     <a href='appointment/create/{{$doctor->id}}' class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
                 </div> 
+                @endif
                 @endauth        
             </div>
         </li>

@@ -23,11 +23,29 @@ class DoctorController extends Controller
     }
 
     public function create(){
-
+        return view('admin.createDoctor');
     }
 
-    public function store(){
+    public function store(request $request){
+        $request->validate([
+            'nama'=>['required', 'string'],
+            'spesialis'=>['required', 'string'],
+            'foto'=>['image']
+        ]);
+
+        $doctor = new Doctor;
+        $doctor->nama = $request->nama;
+        $doctor->spesialis = $request->spesialis;
         
+        if ($request->hasFile('foto')) {
+            $photo = $request->file('foto');
+            $blobData = file_get_contents($photo);
+            $doctor->foto = $blobData;
+        }
+
+        $doctor->save();
+        
+        return redirect()->route('admin.doctor');
     }
 
     public function edit(string $id){
@@ -40,13 +58,19 @@ class DoctorController extends Controller
         $request->validate([
             'nama'=>['required', 'string'],
             'spesialis'=>['required', 'string'],
-            'foto'=>['required', 'string'],
+            'foto'=>['image']
         ]);
 
         $doctor = Doctor::find($id);
         $doctor->nama = $request->nama;
         $doctor->spesialis = $request->spesialis;
-        $doctor->foto = $request->foto;
+        
+        if($request->hasFile('foto')) {
+            $photo = $request->file('foto');
+            $blobData = file_get_contents($photo);
+            $doctor->foto = $blobData;
+        }
+
         $doctor->save();
 
         return redirect()->route('admin.doctor');

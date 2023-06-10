@@ -53,6 +53,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::delete('/admin/doctor/{id}/delete', [DoctorController::class, 'destroy'])->name('doctor.destroy');
         Route::get('/admin/doctor/{id}/edit', [DoctorController::class, 'edit'])->name('doctor.edit');
         Route::patch('/admin/doctor/{id}/update', [DoctorController::class, 'update'])->name('doctor.update');
+        Route::get('/admin/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
+        Route::post('/admin/doctor/store', [DoctorController::class, 'store'])->name('doctor.store');
 
         Route::get('/appointment/approve/{id}', [AppointmentController::class, 'approve'])->name('appointment.approve');
         Route::get('/appointment/decline/{id}', [AppointmentController::class, 'decline'])->name('appointment.decline');
