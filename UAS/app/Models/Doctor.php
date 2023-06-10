@@ -13,10 +13,11 @@ class Doctor extends Model
         return $this->hasMany(Jadwal::class);
     }
 
-    public function appointment(){
+    public function appointments()
+    {
         return $this->hasMany(Appointment::class);
     }
-
+ 
     public function review(){
         return $this->hasMany(Review::class);
     }

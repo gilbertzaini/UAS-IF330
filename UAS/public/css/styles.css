@@ -1,11 +1,18 @@
 body {
     max-width: 100%;
+    /* font-family: 'Figtree'; */
 }
 
 .carousel-item {
     width: 100%;
     height: 70%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-item img{
+    object-fit: cover;
+    object-position: center;
 }
 
 .footerHeading {
@@ -50,6 +57,27 @@ body {
     border-bottom-right-radius: 10px;
 }
 
+.dokterJadwal svg{
+    width: 10rem;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    /* object-fit: cover; */
+}
+
 .jadwalDokter{
     border-width: 0 0 0 3px;
+}
+
+#reviewedDoctor img{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pageHeading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
 }

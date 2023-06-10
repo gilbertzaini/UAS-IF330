@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100" style="position:sticky; top:0; z-index: 100;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto">
         <div class="flex justify-between h-16">
@@ -15,19 +15,24 @@
                     <x-nav-link :href="url('/jadwal')" :active="request()->url() === url('/jadwal')">
                         Jadwal
                     </x-nav-link>
+                    @auth
+                    <x-nav-link :href="route('appointment.list')" :active="request()->route() === route('appointment.list')">
+                        Daftar Reservasi
+                    </x-nav-link>
+                    @endauth
                 </div>
             </div>
 
             <!-- Auth Links -->
             @auth
-            <div class="hidden sm:flex sm:items-center sm:space-x-4 justify-center">
-                <x-nav-link :href="route('profile.edit')">
+            <div class="hidden sm:flex sm:items-center sm:space-x-4 justify-center" style="height: 100%;">
+                <x-nav-link :href="route('profile.edit')" style="height: 100%;">
                     {{ __('Profile') }}
                 </x-nav-link>
                 
-                <form method="POST" action="{{ route('logout') }}" class="ml-5">
+                <form method="POST" action="{{ route('logout') }}" class="ml-5 my-auto" style="height: 100%;">
                     @csrf
-                    <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="pt-3" style="margin-top: 3px;">
+                    <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" style="height: 100%;" class="my-auto">
                         {{ __('Log Out') }}
                     </x-nav-link>
                 </form>
@@ -36,11 +41,11 @@
 
             <!-- Guest Links -->
             @guest
-            <div class="hidden sm:flex sm:items-center sm:space-x-4">
-                <x-nav-link :href="url('/login')" :active="request()->url() === url('/login')">
+            <div class="hidden sm:flex sm:items-center sm:space-x-4" style="height: 100%;">
+                <x-nav-link :href="url('/login')" :active="request()->url() === url('/login')" style="height: 100%;">
                     Login
                 </x-nav-link>
-                <x-nav-link :href="url('/register')" :active="request()->url() === url('/register')" class="ml-5">
+                <x-nav-link :href="url('/register')" :active="request()->url() === url('/register')" class="ml-5" style="height: 100%;">
                     Register
                 </x-nav-link>
             </div>

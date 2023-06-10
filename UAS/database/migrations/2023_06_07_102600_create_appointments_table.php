@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('id_dokter');
             $table->string('id_user');
-            $table->dateTime('jadwal');
+            $table->string('id_jadwal');
             $table->string('keluhan');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

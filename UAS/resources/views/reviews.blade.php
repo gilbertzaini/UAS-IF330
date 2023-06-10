@@ -1,34 +1,30 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
-        <h1>Reviews</h1>
-
+    <div class="">
         <div class="review">
-            <div class="doctor-info">
+            <div id="reviewedDoctor" class="py-3 d-flex justify-content-center align-center" style="background-color: white;">
                 <img src="{{asset('storage/assets/fotoDokter/bocil.jpg')}}">
-                <h2>Dr. John Doe</h2>
-                <p>Specialty: Cardiology</p>
+                <div class="d-flex flex-column justify-center align-center ml-5">
+                    <h1 style="font-weight: bold; font-size: 3rem;">{{$doctor->nama}}</h1>
+                    <p style="font-size: 1.5rem;">Spesialis: {{$doctor->spesialis}}</p>
+                </div>
             </div>
-            <div class="patient-review">
-                <h3>Reviews from Previous Patients</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus velit eu maximus pellentesque.</p>
+            <div class="pb-5 pt-3">
+                <div class="mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 50%;">                 
+                    <h1 style="font-weight: bold; font-size: 1.2rem;">Ulasan:</h1>
+                    <hr class="mt-3"/>
+                    <div class="py-3 mt-2" style="overflow: auto; height: 52%;">
+                        @foreach($reviews as $review)
+                        <div class="mt-2 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 90%; height: auto; word-wrap: break-word;">                 
+                            <h1>{{$review->user->name}}</h1>
+                            <hr class="my-2"/>
+                            <p class="word-break: break-all;">{{$review->ulasan}}</a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="review">
-            <div class="doctor-info">
-                <img src="{{asset('storage/assets/fotoDokter/bocil.jpg')}}">
-                <h2>Dr. Jane Smith</h2>
-                <p>Specialty: Pediatrics</p>
-            </div>
-            <div class="patient-review">
-                <h3>Reviews from Previous Patients</h3>
-                <p>Nulla nec ipsum id leo varius tincidunt. Sed rutrum tellus nec diam malesuada varius.</p>
-            </div>
-        </div>
-
-        <!-- Add more reviews as needed -->
-
     </div>
 @endsection
