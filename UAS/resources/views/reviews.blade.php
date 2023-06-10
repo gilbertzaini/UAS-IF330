@@ -3,10 +3,10 @@
 @section('content')
     <div class="">
         <div class="review">
-            <div id="reviewedDoctor" class="py-3 d-flex justify-content-center align-center" style="background-color: white;">
-                <img src="{{asset('storage/assets/fotoDokter/bocil.jpg')}}">
-                <div class="d-flex flex-column justify-center align-center ml-5">
-                    <h1 style="font-weight: bold; font-size: 3rem;">{{$doctor->nama}}</h1>
+            <div id="reviewedDoctor" class="py-3 d-flex flex-column justify-content-center align-center" style="background-color: white;">
+                <img class="mx-auto" src="{{asset('storage/assets/fotoDokter/bocil.jpg')}}">
+                <div class="d-flex flex-column justify-center align-center text-center pt-3">
+                    <h1 style="font-weight: bold; font-size: 2rem;">{{$doctor->nama}}</h1>
                     <p style="font-size: 1.5rem;">Spesialis: {{$doctor->spesialis}}</p>
                 </div>
             </div>

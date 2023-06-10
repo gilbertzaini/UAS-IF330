@@ -72,8 +72,8 @@ body {
 #reviewedDoctor img{
     width: 10em;
     height: 10em;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 12%;
+    object-fit: contain;
 }
 
 .pageHeading {
@@ -100,4 +100,13 @@ tr {
 tbody {
     overflow: auto;
     max-height: 50%;
+}
+
+ul {
+    max-height: 30%;
+    overflow: auto;
+}
+
+li {
+    text-align: start;
 }

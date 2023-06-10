@@ -57,6 +57,5 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/review/{id}', [ReviewController::class, 'show'])->name('review.show');    
-});
+Route::get('/review/{id}', [ReviewController::class, 'show'])->name('review.show');
+    
