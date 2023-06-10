@@ -23,7 +23,7 @@ class AdminController extends Controller
 
     public function user()
     {
-        $users = User::all();
+        $users = User::all()->where('is_admin', 0);
         return view('admin.user', ['users'=>$users]);
     }
 
