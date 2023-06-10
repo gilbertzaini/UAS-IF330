@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController; // Import the ReviewController
@@ -48,12 +49,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/admin/jadwal', [AdminController::class, 'jadwal'])->name('admin.jadwal');
         Route::post('admin/jadwal/filter', [JadwalController::class, 'adminSearch'])->name('admin.doctor.search');
 
-        Route::get('/admin/doctor', [AdminController::class, 'doctor'])->name('admin.doctor');
-        Route::delete('/admin/doctor/{id}/delete', [AdminController::class, 'destroyDoctor'])->name('doctor.destroy');
-        Route::get('/admin/doctor/{id}/edit', [AdminController::class, 'editDoctor'])->name('doctor.edit');
-        Route::patch('/admin/doctor/{id}/update', [AdminController::class, 'updateDoctor'])->name('doctor.update');
+        Route::get('/admin/doctor', [DoctorController::class, 'index'])->name('admin.doctor');
+        Route::delete('/admin/doctor/{id}/delete', [DoctorController::class, 'destroy'])->name('doctor.destroy');
+        Route::get('/admin/doctor/{id}/edit', [DoctorController::class, 'edit'])->name('doctor.edit');
+        Route::patch('/admin/doctor/{id}/update', [DoctorController::class, 'update'])->name('doctor.update');
 
-                Route::get('/appointment/approve/{id}', [AppointmentController::class, 'approve'])->name('appointment.approve');
+        Route::get('/appointment/approve/{id}', [AppointmentController::class, 'approve'])->name('appointment.approve');
         Route::get('/appointment/decline/{id}', [AppointmentController::class, 'decline'])->name('appointment.decline');
 });
 

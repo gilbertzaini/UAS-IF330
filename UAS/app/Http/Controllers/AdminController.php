@@ -34,40 +34,4 @@ class AdminController extends Controller
 
         return view('admin.approval', ['appointments'=>$appointments]);
     }
-
-    public function doctor()
-    {
-        $doctors = Doctor::all();
-        return view('admin.doctor', ['doctors'=>$doctors]);
-    }
-
-    public function destroyDoctor(string $id)
-    {
-        $doctor = Doctor::find($id);
-        $doctor->delete();
-
-        return redirect()->route('admin.doctor');
-    }
-
-    public function editDoctor(string $id){
-        $doctor = Doctor::find($id);
-
-        return view('admin.updateDoctor', ['doctor'=>$doctor]);
-    }
-
-    public function updateDoctor(request $request, string $id){
-        $request->validate([
-            'nama'=>['required', 'string'],
-            'spesialis'=>['required', 'string'],
-            'foto'=>['required', 'string'],
-        ]);
-
-        $doctor = Doctor::find($id);
-        $doctor->nama = $request->nama;
-        $doctor->spesialis = $request->spesialis;
-        $doctor->foto = $request->foto;
-        $doctor->save();
-
-        return redirect()->route('admin.doctor');
-    }
 }
