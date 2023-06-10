@@ -5,7 +5,7 @@
     <h1 class="pageHeading py-5">Appointment List</h1>
 
     <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
+        <thead class="table-dark">
             <tr>
                 <th>Jadwal</th>
                 <th>Dokter</th>
@@ -14,12 +14,13 @@
                 <th>Action</th>
             </tr>
         </thead class="word-break: break-word">
-        <tbody>
+        <tbody class="table-light">
             @foreach ($appointments as $appointment)
             <tr>
-                <td>{{$appointment->jadwalPraktik}}</td>
+                <td>{{$appointment->jadwal->jadwalPraktik}}</td>
                 <td>{{$appointment->doctor->nama}}</td>
                 <td>{{$appointment->user->name}}</td>
+                <td>{{$appointment->status}}</td>
                 <td>
                     <button href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Accept</button>
                     <button href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Decline</button>     
