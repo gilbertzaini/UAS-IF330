@@ -81,3 +81,23 @@ body {
     font-weight: bold;
     text-align: center;
 }
+
+td {
+    word-break: break-word;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: start;
+}
+
+table {
+    word-wrap: break-word;
+}
+
+tr {
+    text-align: center;
+}
+
+tbody {
+    overflow: auto;
+    max-height: 50%;
+}

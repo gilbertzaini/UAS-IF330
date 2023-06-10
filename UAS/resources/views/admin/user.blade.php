@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container-fluid col-10 text-center">
     <h1 class="pageHeading py-5">Daftar User</h1>
 
     <table class="table table-striped table-bordered">

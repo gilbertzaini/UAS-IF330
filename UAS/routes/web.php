@@ -45,7 +45,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/admin/user', [AdminController::class, 'user'])->name('admin.user');
         Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
         Route::get('/admin/doctor', [AdminController::class, 'doctor'])->name('admin.doctor');
-        
+        Route::delete('/admin/doctor/{id}/delete', [AdminController::class, 'destroyDoctor'])->name('doctor.destroy');
+
         Route::get('/appointment/approve/{id}', [AppointmentController::class, 'approve'])->name('appointment.approve');
         Route::get('/appointment/decline/{id}', [AppointmentController::class, 'decline'])->name('appointment.decline');
 });
