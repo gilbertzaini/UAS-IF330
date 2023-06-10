@@ -42,7 +42,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-        Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/admin/index', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/user', [AdminController::class, 'user'])->name('admin.user');
         Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
         Route::get('/admin/doctor', [AdminController::class, 'doctor'])->name('admin.doctor');
