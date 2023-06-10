@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -21,8 +21,8 @@
                 <td>{{$appointment->doctor->nama}}</td>
                 <td>{{$appointment->user->name}}</td>
                 <td>
-                    <x-success-button href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Accept</x-success-button>
-                    <x-danger-button href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Decline</x-danger-button>     
+                    <button href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Accept</button>
+                    <button href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Decline</button>     
                 </td>
             </tr>
             @endforeach
