@@ -38,6 +38,14 @@ class AdminController extends Controller
     public function doctor()
     {
         $doctors = Doctor::all();
-        return view('admin.user', ['doctors'=>$doctors]);
+        return view('admin.doctor', ['doctors'=>$doctors]);
+    }
+
+    public function destroyDoctor(string $id)
+    {
+        $doctor = Doctor::find($id);
+        $doctor->delete();
+
+        return redirect()->route('admin.doctor');
     }
 }
