@@ -16,6 +16,11 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    public function profile()
+    {
+        return view('admin.profile');
+    }
+
     public function user()
     {
         $users = User::all();

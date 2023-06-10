@@ -20,4 +20,16 @@ class JadwalController extends Controller
 
         return view('admin.jadwal', ['doctors'=>$doctors]);
     }
+
+    function searchFromHome(string $spesialis){
+        $doctors = Doctor::where('spesialis', $spesialis)->get();
+
+        return view('jadwal', ['doctors'=>$doctors]);
+    }
+
+    function adminSearchFromHome(string $spesialis){
+        $doctors = Doctor::where('spesialis', $spesialis)->get();
+
+        return view('admin.jadwal', ['doctors'=>$doctors]);
+    }
 }

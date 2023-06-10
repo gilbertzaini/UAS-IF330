@@ -45,9 +45,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/admin/index', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/user', [AdminController::class, 'user'])->name('admin.user');
+        Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
         Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
         Route::get('/admin/jadwal', [AdminController::class, 'jadwal'])->name('admin.jadwal');
         Route::post('admin/jadwal/filter', [JadwalController::class, 'adminSearch'])->name('admin.doctor.search');
+        Route::get('admin/jadwal/{spesialis}', [JadwalController::class, 'adminSearchFromHome'])->name('admin.doctor.searchFromHome');
 
         Route::get('/admin/doctor', [DoctorController::class, 'index'])->name('admin.doctor');
         Route::delete('/admin/doctor/{id}/delete', [DoctorController::class, 'destroy'])->name('doctor.destroy');
@@ -68,3 +70,4 @@ Route::middleware(['auth', 'user'])->group(function () {
 
 Route::get('/review/{id}', [ReviewController::class, 'show'])->name('review.show');
 Route::post('/jadwal/filter', [JadwalController::class, 'search'])->name('doctor.search');
+Route::get('/jadwal/{spesialis}', [JadwalController::class, 'searchFromHome'])->name('doctor.searchFromHome');
