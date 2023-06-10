@@ -47,10 +47,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/admin/user', [AdminController::class, 'user'])->name('admin.user');
         Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
         Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
+
         Route::get('/admin/jadwal', [AdminController::class, 'jadwal'])->name('admin.jadwal');
         Route::post('admin/jadwal/filter', [JadwalController::class, 'adminSearch'])->name('admin.doctor.search');
         Route::get('admin/jadwal/{spesialis}', [JadwalController::class, 'adminSearchFromHome'])->name('admin.doctor.searchFromHome');
-
+        Route::get('/admin/jadwal/create/{id}', [JadwalController::class, 'create'])->name('jadwal.create');
+        Route::post('/admin/jadwal/store', [JadwalController::class, 'store'])->name('jadwal.store');
+        Route::delete('/admin/jadwal/{jadwal_id}/{doctor_id}/delete', [JadwalController::class, 'destroy'])->name('jadwal.destroy');
+           
         Route::get('/admin/doctor', [DoctorController::class, 'index'])->name('admin.doctor');
         Route::delete('/admin/doctor/{id}/delete', [DoctorController::class, 'destroy'])->name('doctor.destroy');
         Route::get('/admin/doctor/{id}/edit', [DoctorController::class, 'edit'])->name('doctor.edit');
