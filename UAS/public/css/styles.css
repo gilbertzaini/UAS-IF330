@@ -81,3 +81,11 @@ body {
     font-weight: bold;
     text-align: center;
 }
+
+td {
+    word-break: break-word;
+}
+
+table {
+    word-wrap: break-word;
+}

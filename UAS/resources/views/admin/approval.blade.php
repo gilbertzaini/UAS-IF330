@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <h1>Appointment List</h1>
+<div class="container-fluid col-10 text-center">
+    <h1 class="pageHeading py-5">Appointment List</h1>
 
-    <table class="table">
-        <thead class="thead-light">
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
             <tr>
                 <th>Jadwal</th>
                 <th>Dokter</th>
@@ -13,7 +13,7 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
-        </thead>
+        </thead class="word-break: break-word">
         <tbody>
             @foreach ($appointments as $appointment)
             <tr>
