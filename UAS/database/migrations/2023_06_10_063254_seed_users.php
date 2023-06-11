@@ -23,6 +23,7 @@ return new class extends Migration
                 'alamat' => 'admin',
                 'jenisKelamin' => 'L',
                 'password' => Hash::make('admin123'),
+                'is_admin' => 1
             ],
             [
                 'email' => 'ian@gmail.com',

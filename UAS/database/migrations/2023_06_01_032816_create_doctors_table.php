@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('spesialis');
-            $table->binary('foto')->nullable();
+            $table->binary('foto')->nullable(); //blob, nanti ganti manual ke longblob
             $table->timestamps();
         });
     }
