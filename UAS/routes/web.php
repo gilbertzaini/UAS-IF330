@@ -25,6 +25,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
+Route::get('/admin', function () {
+    return redirect()->route('admin.index');
+});
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return redirect()->route('index');
