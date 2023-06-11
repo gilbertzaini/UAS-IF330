@@ -74,10 +74,9 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/appointment/create/{id}', [AppointmentController::class, 'create'])->name('appointment.create');    
     Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
+    Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
 });
 
 Route::get('/review/{id}', [ReviewController::class, 'show'])->name('review.show');
-Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
-
 Route::post('/jadwal/filter', [JadwalController::class, 'search'])->name('doctor.search');
 Route::get('/jadwal/{spesialis}', [JadwalController::class, 'searchFromHome'])->name('doctor.searchFromHome');

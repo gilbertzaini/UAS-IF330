@@ -5,12 +5,12 @@
         <p>Alamat: Jl. Sehat</p>
         <p>Contact Center: 021-210210210</p>
     </div>
-    <div class="d-flex flex-column justify-content-center">
+    {{-- <div class="d-flex flex-column justify-content-center"> --}}
         {{-- <h3 class="footerHeading text-center mb-3">About Us</h3>
         <a href="#" target="_none">Profil Klinik</a>
         <a href="#" target="_none">Career</a>
         <a href="#" target="_none">Hubungi Kami</a> --}}
-    </div>
+    {{-- </div> --}}
     <div class="d-flex flex-column justify-content-center">
         <h3 class="footerHeading text-center mb-3">Kelompok 6</h3>
         <ul style="list-style: circle" class="ml-4">  
