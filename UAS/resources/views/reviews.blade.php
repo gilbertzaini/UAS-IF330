@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="pb-5 pt-3">
-                <div class="mt-6 px-6 pt-4 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 50%;">                 
+                <div class="mt-6 px-6 pt-4 pb-2 bg-white shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 50%;">                 
                     <h1 style="font-weight: bold; font-size: 1.2rem;">Ulasan:</h1>
                     <hr class="mt-3"/>
                     <div class="py-3 mt-2" style="overflow: auto; height: 52%;">
@@ -30,7 +30,7 @@
                         @endforeach
                     </div>
                     @if($canReview)
-                    <div class="mt-6 px-6 pt-3 pb-2 bg-grey mx-auto" style="width: 100%; border-top: 1px solid #ccc;">
+                    <div class="mt-6 px-6 pt-3 bg-grey mx-auto" style="width: 100%; border-top: 1px solid #ccc;">
                         <form action="{{ route('review.store') }}" method="POST">
                             @csrf
                                                 
