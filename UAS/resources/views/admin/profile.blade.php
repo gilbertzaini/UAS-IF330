@@ -9,8 +9,8 @@
             <p><strong>Members:</strong></p>
             <ul class="ml-4">  
                 <li>Cianando Pautrisio Cendranadi</li>
-                <li>Indah Desri Wahyuni</li>
                 <li>Gilbert Zaini</li>
+                <li>Indah Desri Wahyuni</li>                
                 <li>Mahdi Husein Punca</li>
             </ul>
         </div>
