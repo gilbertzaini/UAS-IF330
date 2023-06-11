@@ -14,6 +14,7 @@
 
         <!-- css -->
         <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
         <!-- js -->
         <script src="{{asset('js/common.js')}}"></script>
