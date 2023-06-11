@@ -55,7 +55,7 @@ class AppointmentController extends Controller
         return redirect()->route('admin.approval');
     }
 
-    public function deny(string $id){
+    public function decline(string $id){
         $appointment = Appointment::find($id);
         $appointment->status = 'Denied';
         $appointment->save();
