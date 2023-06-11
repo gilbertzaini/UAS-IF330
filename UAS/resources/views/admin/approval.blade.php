@@ -28,7 +28,7 @@
                         <a class="btn btn-danger mx-auto" href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Deny</a>   
                         @elseif($appointment->status == "Approved")
                         <a class="btn btn-success mx-auto" href="{{ route('appointment.done', ['id' => $appointment->id]) }}">Done</a>  
-                        @else                    
+                        @elseif($appointment->status == "Denied")                  
                         <a class="btn btn-success mx-auto" href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Approve</a>
                         @endif
                     </div>
