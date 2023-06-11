@@ -34,7 +34,7 @@
       </div>
       <div class="row">
           <a class="col" href="{{route($route, ['spesialis'=>'Dokter Penyakit Dalam'])}}">
-              <x-healthicons-o-cardiology class="mx-auto"/>
+              <x-healthicons-o-lungs class="mx-auto"/>
               <p>Penyakit Dalam</p>
           </a>
           <a class="col" href="{{route($route, ['spesialis'=>'Dokter THT'])}}">
