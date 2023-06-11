@@ -52,7 +52,7 @@ class User extends Authenticatable
     protected $guard = 'web';
 
     public function appointment(){
-        return $this->hasMany(Appointment::class);
+        return $this->hasMany(Appointment::class, 'id_user');
     }
 
     public function review(){

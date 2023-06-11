@@ -73,5 +73,7 @@ Route::middleware(['auth', 'user'])->group(function () {
 });
 
 Route::get('/review/{id}', [ReviewController::class, 'show'])->name('review.show');
+Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
+
 Route::post('/jadwal/filter', [JadwalController::class, 'search'])->name('doctor.search');
 Route::get('/jadwal/{spesialis}', [JadwalController::class, 'searchFromHome'])->name('doctor.searchFromHome');

@@ -64,7 +64,7 @@
                 @auth
                 @if(auth()->user()->is_admin == 0)
                 <div>                
-                    <a href='appointment/create/{{$doctor->id}}' class="btn btn-primary mt-2" style="width:100%;">Buat Jadwal</a>
+                    <a href='appointment/create/{{$doctor->id}}' class="btn btn-primary mt-2" style="width:100%; background-color: #808080;">Buat Jadwal</a>
                 </div> 
                 @endif
                 @endauth        
