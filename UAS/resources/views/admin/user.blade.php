@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.master')
 
 @section('content')
 <div class="container-fluid col-10 text-center pb-5">

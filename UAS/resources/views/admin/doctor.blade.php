@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.master')
 
 @section('content')
 <div class="container-fluid col-10 text-center pb-5">
@@ -19,7 +19,9 @@
         <tbody class="table-light">
             @foreach ($doctors as $doctor)
             <tr>
-                <td></td>
+                <td>
+                    <img src="data:image/jpeg;base64,{{ base64_encode($doctor->foto) }}"/>
+                </td>
                 <td>
                     <a href={{ route('doctor.edit', ['id' => $doctor->id]) }} class="namaDokter text-start" style="word-wrap: break-word;">{{$doctor->nama}}</a>
                 </td>

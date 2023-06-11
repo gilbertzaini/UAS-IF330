@@ -16,9 +16,14 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    public function profile()
+    {
+        return view('admin.profile');
+    }
+
     public function user()
     {
-        $users = User::all();
+        $users = User::all()->where('is_admin', 0);
         return view('admin.user', ['users'=>$users]);
     }
 

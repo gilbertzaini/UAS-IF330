@@ -29,7 +29,15 @@ class AuthenticatedSessionController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
+            'captcha' => 'required|string',
+            'userCaptcha' => 'required|string'
         ]);
+
+        if ($request->captcha != $request->userCaptcha) {
+            return redirect()->route('login')
+                ->withErrors(['captcha' => "Captcha doesn't match"]);
+        }
+        
 
         // Perform authentication
         $credentials = $request->only('email', 'password');

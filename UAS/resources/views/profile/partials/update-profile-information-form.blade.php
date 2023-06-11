@@ -34,8 +34,8 @@
         <div>
             <x-input-label for="jenisKelamin" :value="__('Jenis Kelamin')" />
             <select id="jenisKelamin" name="jenisKelamin" class="mt-1 block w-full text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-                <option value="L" @if(old('jenisKelamin', $user->jenisKelamin) === 'L') selected @endif>{{ __('L') }}</option>
-                <option value="P" @if(old('jenisKelamin', $user->jenisKelamin) === 'P') selected @endif>{{ __('P') }}</option>
+                <option value="L" @if(old('jenisKelamin', $user->jenisKelamin) === 'L') selected @endif>{{ __('Laki-laki') }}</option>
+                <option value="P" @if(old('jenisKelamin', $user->jenisKelamin) === 'P') selected @endif>{{ __('Perempuan') }}</option>
             </select>
             <x-input-error class="mt-2" :messages="$errors->get('jenisKelamin')" />
         </div>
