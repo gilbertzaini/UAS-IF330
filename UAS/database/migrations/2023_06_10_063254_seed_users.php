@@ -34,6 +34,7 @@ return new class extends Migration
                 'alamat' => 'Sampora, Cisauk, Tangerang Regency, Banten',
                 'jenisKelamin' => 'L',
                 'password' => Hash::make('123456789'),
+                'is_admin' => 0
             ],
             [
                 'email' => 'kheskur@gmail.com',
@@ -44,6 +45,7 @@ return new class extends Migration
                 'alamat' => 'Kademangan, Setu, South Tangerang City, Banten',
                 'jenisKelamin' => 'L',
                 'password' => Hash::make('123456789'),
+                'is_admin' => 0
             ],
             [
                 'email' => 'pid@gmail.com',
@@ -54,6 +56,7 @@ return new class extends Migration
                 'alamat' => 'Jl. Cendekia, Ciater, Kec. Serpong, Kota Tangerang Selatan, Banten 15310',
                 'jenisKelamin' => 'L',
                 'password' => Hash::make('123456789'),
+                'is_admin' => 0
             ],
             [
                 'email' => 'lidbel@gmail.com',
@@ -64,6 +67,7 @@ return new class extends Migration
                 'alamat' => 'Blk. C 14-2, Kademangan, Kec. Setu, Kota Tangerang Selatan, Banten 15314',
                 'jenisKelamin' => 'P',
                 'password' => Hash::make('123456789'),
+                'is_admin' => 0
             ]
             
         ]);
