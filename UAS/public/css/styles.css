@@ -83,6 +83,7 @@ td {
     margin-top: auto;
     margin-bottom: auto;
     text-align: start;
+    vertical-align: middle;
 }
 
 table {

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('id_user');
             $table->string('id_jadwal');
             $table->string('keluhan');
-            $table->string('status')->default('pending');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

@@ -68,6 +68,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
         Route::get('/appointment/approve/{id}', [AppointmentController::class, 'approve'])->name('appointment.approve');
         Route::get('/appointment/decline/{id}', [AppointmentController::class, 'decline'])->name('appointment.decline');
+        Route::get('/appointment/done/{id}', [AppointmentController::class, 'done'])->name('appointment.done');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

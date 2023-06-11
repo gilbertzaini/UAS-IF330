@@ -50,10 +50,24 @@ class AppointmentController extends Controller
     public function approve(string $id){
         $appointment = Appointment::find($id);
         $appointment->status = 'Approved';
+        $appointment->save();
+        
+        return redirect()->route('admin.approval');
     }
 
     public function deny(string $id){
         $appointment = Appointment::find($id);
         $appointment->status = 'Denied';
+        $appointment->save();
+
+        return redirect()->route('admin.approval');
+    }
+
+    public function done(string $id){
+        $appointment = Appointment::find($id);
+        $appointment->status = 'Done';
+        $appointment->save();
+        
+        return redirect()->route('admin.approval');
     }
 }

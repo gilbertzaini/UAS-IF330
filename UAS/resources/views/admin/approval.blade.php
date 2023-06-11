@@ -22,8 +22,16 @@
                 <td>{{$appointment->user->name}}</td>
                 <td>{{$appointment->status}}</td>
                 <td>
-                    <button class="btn btn-success" href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Accept</button>
-                    <button class="btn btn-danger" href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Decline</button>     
+                    <div class="d-flex align-center justify-around">
+                        @if($appointment->status == "Pending")
+                        <a class="btn btn-success mx-auto" href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Approve</a>  
+                        <a class="btn btn-danger mx-auto" href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Deny</a>   
+                        @elseif($appointment->status == "Approved")
+                        <a class="btn btn-success mx-auto" href="{{ route('appointment.done', ['id' => $appointment->id]) }}">Done</a>  
+                        @else                    
+                        <a class="btn btn-success mx-auto" href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Approve</a>
+                        @endif
+                    </div>
                 </td>
             </tr>
             @endforeach
