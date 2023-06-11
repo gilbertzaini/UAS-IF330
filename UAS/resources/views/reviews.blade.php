@@ -28,7 +28,8 @@
                             <p class="word-break: break-all;">{{$review->ulasan}}</a>
                         </div>
                         @endforeach
-                    </div>{{-- @if($canReview) --}}
+                    </div>
+                    @if($canReview)
                     <div class="mt-6 px-6 pt-3 pb-2 bg-grey mx-auto" style="width: 100%; border-top: 1px solid #ccc;">
                         <form action="{{ route('review.store') }}" method="POST">
                             @csrf
@@ -47,7 +48,7 @@
                             <x-input-error :messages="$errors->get('ulasan')" class="mt-2" />
                         </form>                        
                     </div>                    
-                    {{-- @endif --}}
+                    @endif
                 </div>                
             </div>
         </div>
