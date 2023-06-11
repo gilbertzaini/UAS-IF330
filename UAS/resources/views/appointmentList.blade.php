@@ -17,9 +17,15 @@
                 @foreach ($appointments as $appointment)
                 <tr>
                     <td>{{ $appointment->jadwal->jadwalPraktik }}</td>
-                    <td>{{ $appointment->doctor->nama}}</td>
+                    <td><a href={{ route('review.show', ['id' => $appointment->doctor->id]) }}>{{ $appointment->doctor->nama}}</a></td>
                     <td style="word-break: break-word">{{ $appointment->keluhan }}</td>
-                    <td>{{ $appointment->status }}</td>
+                    <td>
+                        @if($appointment->status == "Done")
+                            <a href="{{ route('review.show', ['id' => $appointment->doctor->id]) }}"><p>Done (Ulas)</p></a>
+                        @else
+                            {{ $appointment->status }}
+                        @endif
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

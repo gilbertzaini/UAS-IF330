@@ -23,7 +23,7 @@
                     <div class="py-3 mt-2" style="overflow: auto; height: 52%;">
                         @foreach($reviews as $review)
                         <div class="mt-2 px-6 py-4 bg-gray shadow-md overflow-hidden sm:rounded-lg mx-auto" style="width: 90%; height: auto; word-wrap: break-word; border: 1px solid #ccc;">                 
-                            <h1>{{$review->user->name}}</h1>
+                            <h3 style="font-weight: bold; font-size: 1.1rem;">{{$review->user->name}}</h3>
                             <hr class="my-2"/>
                             <p class="word-break: break-all;">{{$review->ulasan}}</a>
                         </div>
