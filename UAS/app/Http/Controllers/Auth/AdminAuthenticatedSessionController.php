@@ -27,10 +27,10 @@ class AdminAuthenticatedSessionController extends Controller
         }
 
         // User is an admin, proceed with login
-        auth()->guard('web')->login($user);
+        auth()->guard('admin')->login($user);
 
         $request->session()->regenerate();
 
-        return redirect()->intended('/admin/dashboard');
+        return redirect()->route('admin.index');
     }
 }

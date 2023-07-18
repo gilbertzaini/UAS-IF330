@@ -1,5 +1,3 @@
-<!-- resources/views/admin-profile.blade.php -->
-
 @extends('layouts.master')
 
 @section('content')

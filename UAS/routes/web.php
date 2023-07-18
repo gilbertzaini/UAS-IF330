@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController; // Import the ReviewController
 use App\Models\Doctor;
@@ -24,6 +26,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
+Route::get('/admin', function () {
+    return redirect()->route('admin.index');
+});
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return redirect()->route('index');
@@ -42,11 +48,25 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-        Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/admin/index', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/admin/user', [AdminController::class, 'user'])->name('admin.user');
+        Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
         Route::get('/admin/approval', [AdminController::class, 'approval'])->name('admin.approval');
-        Route::get('/admin/doctor', [AdminController::class, 'doctor'])->name('admin.doctor');
-        
+
+        Route::get('/admin/jadwal', [AdminController::class, 'jadwal'])->name('admin.jadwal');
+        Route::post('admin/jadwal/filter', [JadwalController::class, 'adminSearch'])->name('admin.doctor.search');
+        Route::get('admin/jadwal/{spesialis}', [JadwalController::class, 'adminSearchFromHome'])->name('admin.doctor.searchFromHome');
+        Route::get('/admin/jadwal/create/{id}', [JadwalController::class, 'create'])->name('jadwal.create');
+        Route::post('/admin/jadwal/store', [JadwalController::class, 'store'])->name('jadwal.store');
+        Route::delete('/admin/jadwal/{jadwal_id}/{doctor_id}/delete', [JadwalController::class, 'destroy'])->name('jadwal.destroy');
+           
+        Route::get('/admin/doctor', [DoctorController::class, 'index'])->name('admin.doctor');
+        Route::delete('/admin/doctor/{id}/delete', [DoctorController::class, 'destroy'])->name('doctor.destroy');
+        Route::get('/admin/doctor/{id}/edit', [DoctorController::class, 'edit'])->name('doctor.edit');
+        Route::patch('/admin/doctor/{id}/update', [DoctorController::class, 'update'])->name('doctor.update');
+        Route::get('/admin/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
+        Route::post('/admin/doctor/store', [DoctorController::class, 'store'])->name('doctor.store');
+
         Route::get('/appointment/approve/{id}', [AppointmentController::class, 'approve'])->name('appointment.approve');
         Route::get('/appointment/decline/{id}', [AppointmentController::class, 'decline'])->name('appointment.decline');
 });
@@ -55,6 +75,7 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/appointment/create/{id}', [AppointmentController::class, 'create'])->name('appointment.create');    
     Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
+    Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
 });
 
 Route::middleware(['auth'])->group(function () {

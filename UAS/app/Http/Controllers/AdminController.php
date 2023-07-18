@@ -7,25 +7,30 @@ use App\Models\User;
 use App\Models\Appointment; // Import the Appointment model
 
 use Illuminate\Http\Request;
+use PhpParser\Comment\Doc;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        $members = [
-            'Cianando Pautrisio Cendranadi',
-            'Indah Desri Wahyuni',
-            'Gilbert Zaini',
-            'Mahdi Husein Punca'
-        ];
+        return view('admin.index');
+    }
 
-        return view('admin.index', compact('members'));
+    public function profile()
+    {
+        return view('admin.profile');
     }
 
     public function user()
     {
-        $users = User::all();
+        $users = User::all()->where('is_admin', 0);
         return view('admin.user', ['users'=>$users]);
+    }
+
+    public function jadwal()
+    {
+        $doctors = Doctor::all();
+        return view('admin.jadwal', ['doctors'=>$doctors]);
     }
 
     public function approval()
@@ -33,11 +38,5 @@ class AdminController extends Controller
         $appointments = Appointment::all();
 
         return view('admin.approval', ['appointments'=>$appointments]);
-    }
-
-    public function doctor()
-    {
-        $doctors = Doctor::all();
-        return view('admin.user', ['doctors'=>$doctors]);
     }
 }

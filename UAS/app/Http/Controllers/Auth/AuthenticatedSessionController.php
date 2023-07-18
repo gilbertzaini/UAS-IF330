@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
@@ -25,11 +26,34 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'captcha' => 'required|string',
+            'userCaptcha' => 'required|string'
+        ]);
 
-        $request->session()->regenerate();
+        if ($request->captcha != $request->userCaptcha) {
+            return redirect()->route('login')
+                ->withErrors(['captcha' => "Captcha doesn't match"]);
+        }
+        
 
-        return redirect()->back();
+        // Perform authentication
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            if (Auth::user()->is_admin == 1) {
+                return redirect()->route('admin.index');
+            }
+
+            return redirect()->route('index');
+        }
+
+        throw ValidationException::withMessages([
+            'email' => __('auth.failed'),
+        ]);
     }
 
     /**

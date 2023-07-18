@@ -3,16 +3,16 @@ body {
     /* font-family: 'Figtree'; */
 }
 
-.carousel-item {
+#homeImage {
     width: 100%;
     height: 70%;
-    object-fit: cover;
-    object-position: center;
 }
 
-.carousel-item img{
-    object-fit: cover;
-    object-position: center;
+#homeImage img{
+    scale: 1.2;
+    height: 70%;
+    width: auto;
+    object-fit: contain;
 }
 
 .footerHeading {
@@ -57,12 +57,8 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-.dokterJadwal svg{
-    width: 10rem;
-    height: auto;
-    margin: auto;
-    padding: 10px;
-    /* object-fit: cover; */
+.teksSpesialis {
+    border-width: 3px 0 0 0;
 }
 
 .jadwalDokter{
@@ -72,12 +68,41 @@ body {
 #reviewedDoctor img{
     width: 10em;
     height: 10em;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 12%;
+    object-fit: contain;
 }
 
 .pageHeading {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
+}
+
+td {
+    word-break: break-word;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: start;
+}
+
+table {
+    word-wrap: break-word;
+}
+
+tr {
+    text-align: center;
+}
+
+li {
+    text-align: start;
+}
+
+#doctorListTable img {
+    width: 5em;
+    height: 5em;
+    border-radius: 12px;
+}
+
+#adminProfile li {
+    list-style: circle;
 }

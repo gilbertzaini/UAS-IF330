@@ -1,3 +1,7 @@
+@php
+    $captcha = rand(1000, 9999);
+@endphp
+
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -22,6 +26,35 @@
                             required autocomplete="current-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
+
+        <!-- Captcha -->
+        <div class="mt-4">
+            <x-text-input style="display: none;" type="text" name="captcha" :value="$captcha" readonly/>
+            <x-input-label for="userCaptcha" :value="__('Captcha')" />
+            <div class="flex items-center jutify-center">
+                <x-text-input class="block mt-1 w-auto mr-2" type="text" name="userCaptcha" required/>
+                <p id="captcha" class="my-auto py-auto"
+                    style="
+                    -webkit-user-select: none;
+                    -webkit-touch-callout: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    background: grey;
+                    text-align: center;
+                    font-size: 1.5em;
+                    font-weight: 700;
+                    display: inline-block;
+                    text-decoration: line-through; 
+                    text-decoration-style: double; 
+                    text-decoration-thickness: 5px;
+                    height: 100%;
+                    ">
+                    {{$captcha}}
+                </p>
+            </div>            
+            <x-input-error :messages="$errors->get('captcha')" class="mt-2 text-end"/>
         </div>
 
         <!-- Remember Me -->
