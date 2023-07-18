@@ -49,11 +49,11 @@ class AppointmentController extends Controller
 
     public function approve(string $id){
         $appointment = Appointment::find($id);
-        $appointment->status = 'approved';
+        $appointment->status = 'Approved';
     }
 
     public function deny(string $id){
         $appointment = Appointment::find($id);
-        $appointment->status = 'denied';
+        $appointment->status = 'Denied';
     }
 }

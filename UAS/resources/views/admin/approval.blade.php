@@ -7,31 +7,26 @@
     <table class="table">
         <thead class="thead-light">
             <tr>
-                <th>Schedule</th>
-                <th>Doctor Name</th>
-                <th>Patient Name</th>
+                <th>Jadwal</th>
+                <th>Dokter</th>
+                <th>Pasien</th>
+                <th>Status</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            {{-- @foreach ($appointments as $appointment) --}}
+            @foreach ($appointments as $appointment)
             <tr>
-                <td>June 10, 2023 09:00 AM</td>
-                <td>Dr. John Doe</td>
-                <td>John Smith</td>
+                <td>{{$appointment->jadwalPraktik}}</td>
+                <td>{{$appointment->doctor->nama}}</td>
+                <td>{{$appointment->user->name}}</td>
                 <td>
-                    <button class="btn btn-success">Accept</button>
-                    <button class="btn btn-danger">Decline</button>
+                    <x-success-button href="{{ route('appointment.approve', ['id' => $appointment->id]) }}">Accept</x-success-button>
+                    <x-danger-button href="{{ route('appointment.decline', ['id' => $appointment->id]) }}">Decline</x-danger-button>     
                 </td>
             </tr>
-            {{-- @endforeach --}}
+            @endforeach
         </tbody>
     </table>
 </div>
 @endsection
-
-
-{{-- <td>
-    <a href="{{ route('appointment.approve', ['id' => $appointment->id]) }}" class="btn btn-success">Accept</a>
-    <a href="{{ route('appointment.approve', ['id' => $appointment->id]) }}" class="btn btn-danger">Decline</a>          
-</td> --}}

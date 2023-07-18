@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\User;
 use App\Models\Appointment; // Import the Appointment model
 
@@ -24,14 +25,19 @@ class AdminController extends Controller
     public function user()
     {
         $users = User::all();
-        return view('admin.user', compact('users'));
+        return view('admin.user', ['users'=>$users]);
     }
 
     public function approval()
     {
-        // Fetch the appointments that require approval from the database
-        $appointments = Appointment::where('status', 'pending')->get();
+        $appointments = Appointment::all();
 
-        return view('admin.approval', compact('appointments'));
+        return view('admin.approval', ['appointments'=>$appointments]);
+    }
+
+    public function doctor()
+    {
+        $doctors = Doctor::all();
+        return view('admin.user', ['doctors'=>$doctors]);
     }
 }
